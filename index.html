@@ -2,13 +2,21 @@
 .dza-wrap{--dza-navy:#080f1e;--dza-navy2:#0d1829;--dza-navy3:#111f35;--dza-blue:#0060df;--dza-teal:#dd3162;--dza-gold:#f5a623;--dza-pink:#e8215a;--dza-white:#ffffff;--dza-muted:rgba(255,255,255,0.45);--dza-gb:rgba(255,255,255,0.07);--dza-pure:#0a1628;font-family:'Helvetica Neue',Arial,sans-serif;background:#f4f6fb;color:#0a1628;padding:0;margin:0;width:100%;font-size:17px}
 .dza-wrap *{box-sizing:border-box;margin:0;padding:0}
 
-/* DARK SECTION UTILITY */
-.dza-dark-section { background: var(--dza-pure) !important; color: #ffffff !important; }
+/* DARK SECTION THEME */
+.dza-dark-section { 
+    background: var(--dza-pure) !important; 
+    color: #ffffff !important; 
+    width: 100%;
+}
 .dza-dark-section .dza-sh { color: #ffffff !important; }
 .dza-dark-section .dza-body-text, .dza-dark-section p { color: rgba(255,255,255,0.7) !important; }
-.dza-dark-section .dza-why-card, .dza-dark-section .dza-val-card { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.1); }
-.dza-dark-section .dza-why-title, .dza-dark-section .dza-val-title { color: #ffffff !important; }
-.dza-dark-section .dza-why-text, .dza-dark-section .dza-val-text { color: rgba(255,255,255,0.5) !important; }
+.dza-dark-section .dza-why-card, .dza-dark-section .dza-val-card, .dza-dark-section .dza-mv-card { 
+    background: rgba(255,255,255,0.04) !important; 
+    border: 1px solid rgba(255,255,255,0.1) !important; 
+    box-shadow: none !important;
+}
+.dza-dark-section .dza-why-title, .dza-dark-section .dza-val-title, .dza-dark-section .dza-mv-title { color: #ffffff !important; }
+.dza-dark-section .dza-why-text, .dza-dark-section .dza-val-text, .dza-dark-section .dza-mv-text { color: rgba(255,255,255,0.5) !important; }
 
 /* HERO */
 .dza-hero{display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;padding:80px 32px 72px;text-align:center;overflow:hidden;background:#ffffff}
@@ -35,8 +43,8 @@
 .dza-stat-label{font-size:1rem;color:var(--dza-muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:6px}
 
 /* SECTIONS */
-.dza-section{max-width:100%; display: flex; justify-content: center; padding:64px 0}
-.dza-section-inner{max-width:1020px; width: 100%; padding: 0 24px;}
+.dza-section{width:100%; padding:80px 24px}
+.dza-section-inner{max-width:1020px; margin:0 auto}
 .dza-label{display:inline-flex;align-items:center;gap:8px;font-size:1.1rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--dza-blue);font-weight:700;margin-bottom:14px}
 .dza-label::before{content:'';width:20px;height:2px;background:var(--dza-blue);border-radius:1px}
 .dza-sh{font-size:clamp(1.6rem,4vw,3rem);font-weight:800;color:#0a1628;letter-spacing:-0.5px;line-height:1.15;margin-bottom:18px}
@@ -227,7 +235,7 @@
 
 <div class="dza-divider"></div>
 
-<div class="dza-section dza-dark-section">
+<div class="dza-section">
   <div class="dza-section-inner">
     <div style="text-align:center;margin-bottom:40px">
       <div class="dza-label" style="justify-content:center">Why Zamboanga</div>
@@ -255,7 +263,7 @@
   </div>
 </div>
 
-<div class="dza-section">
+<div class="dza-section dza-dark-section">
   <div class="dza-section-inner">
     <div style="text-align:center;margin-bottom:40px">
       <div class="dza-label" style="justify-content:center">Mission &amp; Vision</div>
@@ -276,7 +284,7 @@
   </div>
 </div>
 
-<div class="dza-section dza-dark-section">
+<div class="dza-section dza-dark-section" style="padding-top:0">
   <div class="dza-section-inner">
     <div style="text-align:center;margin-bottom:40px">
       <div class="dza-label" style="justify-content:center">Core Values</div>
@@ -372,7 +380,7 @@
           <div class="dza-tl-dot"></div>
           <div class="dza-tl-year">Mid 2026 — Development</div>
           <div class="dza-tl-title">Building Begins</div>
-          <p class="dza-tl-text">The development team — led by interns Incent and Jerico  begins building the platform from the ground up, handling everything from backend systems to frontend design and data population.</p>
+          <p class="dza-tl-text">The development team — led by interns Incent and Jerico  begins building the platform from the ground up, handling everything from backend systems to frontend design and data population.</p>
         </div>
         <div class="dza-tl-item">
           <div class="dza-tl-dot"></div>
@@ -400,7 +408,7 @@
       <h2 class="dza-sh">Milestones We're <span>Proud Of</span></h2>
     </div>
     <div class="dza-recog-grid">
-      <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-trophy"></i></span><div class="dza-recog-title">Zamboanga's First Dedicated Directory</div><p class="dza-recog-text">We pioneered the concept of a dedicated local business directory built exclusively for Zamboanga City  the first of its kind in the region.</p></div>
+      <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-trophy"></i></span><div class="dza-recog-title">Zamboanga's First Dedicated Directory</div><p class="dza-recog-text">We pioneered the concept of a dedicated local business directory built exclusively for Zamboanga City  the first of its kind in the region.</p></div>
       <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-users"></i></span><div class="dza-recog-title">Growing Community of Listings</div><p class="dza-recog-text">Within a short period, DiscoverZamboanga has onboarded hundreds of local businesses across more than 20 categories and industries.</p></div>
       <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-globe-asia"></i></span><div class="dza-recog-title">Increasing Online Visibility</div><p class="dza-recog-text">Our platform has helped dozens of Zamboanga businesses achieve their first meaningful online presence, connecting them with thousands of monthly visitors.</p></div>
     </div>
@@ -418,7 +426,6 @@
       <p style="font-size:1.3rem;color:rgba(255,255,255,0.45);max-width:480px;margin:0 auto;line-height:1.8">DiscoverZamboanga was built by a small but dedicated team of interns under RightJob Solutions proving that great things can be built by people who care.</p>
     </div>
     <div class="dza-team-grid">
-
       <div class="dza-team-card">
         <div class="dza-team-avatar">
           <div class="dza-team-initials" style="background:linear-gradient(135deg,#0060df,#003fa3)">ZK</div>
@@ -435,7 +442,6 @@
           <p class="dza-team-desc">Handled the frontend development and user interface of the platform, while also managing data input to ensure all listings were accurate and complete from day one.</p>
         </div>
       </div>
-
       <div class="dza-team-card">
         <div class="dza-team-avatar">
           <div class="dza-team-initials" style="background:linear-gradient(135deg,#e8215a,#a0102e)">IH</div>
@@ -452,7 +458,6 @@
           <p class="dza-team-desc">Led all backend development for the platform building the systems, database architecture, and server-side logic that power DiscoverZamboanga behind the scenes.</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>
