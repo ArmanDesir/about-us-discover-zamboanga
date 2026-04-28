@@ -1,0 +1,534 @@
+<style>
+.dza-wrap{--dza-navy:#080f1e;--dza-navy2:#0d1829;--dza-navy3:#111f35;--dza-blue:#0060df;--dza-teal:#dd3162;--dza-gold:#f5a623;--dza-pink:#e8215a;--dza-white:#ffffff;--dza-muted:rgba(255,255,255,0.45);--dza-gb:rgba(255,255,255,0.07);--dza-pure:#0a1628;font-family:'Helvetica Neue',Arial,sans-serif;background:#f4f6fb;color:#0a1628;padding:0;margin:0;width:100%;font-size:17px}
+.dza-wrap *{box-sizing:border-box;margin:0;padding:0}
+
+/* HERO */
+.dza-hero{display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;padding:80px 32px 72px;text-align:center;overflow:hidden;background:#ffffff}
+.dza-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 0%,rgba(0,96,223,0.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 90% 100%,rgba(232,33,90,0.04) 0%,transparent 70%);pointer-events:none}
+.dza-hero-brand{display:inline-flex;align-items:center;gap:12px;margin-bottom:16px;position:relative}
+.dza-hero-brand img{width:48px;height:48px;object-fit:contain}
+.dza-hero-brand span{font-size:1.4rem;font-weight:700;letter-spacing:1.5px;color:#64748b;text-transform:uppercase}
+.dza-hero-brand span em{color:var(--dza-teal);font-style:normal}
+.dza-eyebrow{display:inline-block;font-size:1.1rem;letter-spacing:3px;text-transform:uppercase;color:var(--dza-blue);border:1px solid rgba(0,96,223,0.3);background:rgba(0,96,223,0.05);border-radius:6px;padding:5px 16px;margin-bottom:20px;position:relative;font-weight:700}
+.dza-hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;letter-spacing:-1.5px;line-height:1.05;position:relative;margin-bottom:18px;color:#0a1628}
+.dza-hero h1 span{color:var(--dza-blue)}
+.dza-hero-sub{color:#4a5568;font-size:1.1rem;line-height:1.75;max-width:560px;margin:0 auto 28px;position:relative}
+.dza-rule{display:flex;align-items:center;justify-content:center;gap:10px;position:relative}
+.dza-rule .l{display:block;height:1px;width:70px;background:var(--dza-blue);opacity:0.4}
+.dza-rule .d{width:7px;height:7px;border-radius:50%;background:var(--dza-gold);flex-shrink:0}
+
+/* STATS */
+.dza-stats{background:#0a1628;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);padding:36px 24px}
+.dza-stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:640px){.dza-stats-inner{grid-template-columns:repeat(2,1fr)}}
+.dza-stat{text-align:center;padding:16px}
+.dza-stat-num{font-size:2.7rem;font-weight:800;color:#ffffff;letter-spacing:-1px;line-height:1}
+.dza-stat-num span{color:var(--dza-blue)}
+.dza-stat-label{font-size:1rem;color:var(--dza-muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:6px}
+
+/* SECTIONS */
+.dza-section{max-width:1020px;margin:0 auto;padding:64px 24px}
+.dza-label{display:inline-flex;align-items:center;gap:8px;font-size:1.1rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--dza-blue);font-weight:700;margin-bottom:14px}
+.dza-label::before{content:'';width:20px;height:2px;background:var(--dza-blue);border-radius:1px}
+.dza-sh{font-size:clamp(1.6rem,4vw,3rem);font-weight:800;color:#0a1628;letter-spacing:-0.5px;line-height:1.15;margin-bottom:18px}
+.dza-sh span{color:var(--dza-blue)}
+.dza-body-text{font-size:1.3rem;color:#374151;line-height:1.85;margin-bottom:16px}
+.dza-body-text:last-child{margin-bottom:0}
+.dza-divider{max-width:1020px;margin:0 auto;height:1px;background:#e2e8f0}
+
+/* STORY */
+.dza-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:720px){.dza-story-grid{grid-template-columns:1fr}}
+.dza-story-img{border-radius:18px;overflow:hidden;position:relative;background:#f0f4ff;border:1px solid #dde5ff;min-height:320px;display:flex;align-items:center;justify-content:center}
+.dza-story-img-inner{padding:40px;text-align:center}
+.dza-story-icon{font-size:5rem;color:var(--dza-blue);opacity:0.2;display:block;margin-bottom:16px}
+.dza-story-badge{background:rgba(0,96,223,0.06);border:1px solid rgba(0,96,223,0.2);border-radius:12px;padding:20px 24px;margin-top:20px;text-align:left}
+.dza-story-badge p{font-size:1.2rem;color:#4a5568;line-height:1.7;font-style:italic}
+.dza-story-badge cite{display:block;margin-top:10px;font-size:1.1rem;color:var(--dza-blue);font-style:normal;font-weight:700;letter-spacing:1px}
+
+/* MISSION VISION */
+.dza-mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.dza-mv-grid{grid-template-columns:1fr}}
+.dza-mv-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:18px;padding:36px 32px;position:relative;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06)}
+.dza-mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.dza-mv-card.mission::before{background:var(--dza-blue)}
+.dza-mv-card.vision::before{background:var(--dza-gold)}
+.dza-mv-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.dza-mv-card.mission .dza-mv-icon{background:rgba(0,96,223,0.12);color:var(--dza-blue);border:1px solid rgba(0,96,223,0.25)}
+.dza-mv-card.vision .dza-mv-icon{background:rgba(245,166,35,0.12);color:var(--dza-gold);border:1px solid rgba(245,166,35,0.25)}
+.dza-mv-title{font-size:1.3rem;font-weight:800;color:#0a1628;margin-bottom:14px;letter-spacing:-0.3px}
+.dza-mv-text{font-size:1.3rem;color:#374151;line-height:1.85}
+
+/* VALUES */
+.dza-values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:720px){.dza-values-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.dza-values-grid{grid-template-columns:1fr}}
+.dza-val-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:28px 24px;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.dza-val-card:hover{transform:translateY(-4px);border-color:rgba(0,96,223,0.4);box-shadow:0 8px 24px rgba(0,96,223,0.1)}
+.dza-val-icon{font-size:2.5rem;margin-bottom:14px;display:block}
+.dza-val-title{font-size:1.4rem;font-weight:700;color:#0a1628;margin-bottom:8px}
+.dza-val-text{font-size:1.2rem;color:#4a5568;line-height:1.7}
+
+/* FEATURES */
+.dza-features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:640px){.dza-features-grid{grid-template-columns:1fr}}
+.dza-feat{display:flex;gap:18px;background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.dza-feat-icon{width:44px;height:44px;border-radius:10px;background:rgba(0,96,223,0.1);border:1px solid rgba(0,96,223,0.2);color:var(--dza-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.dza-feat-title{font-size:1.3rem;font-weight:700;color:#0a1628;margin-bottom:6px}
+.dza-feat-text{font-size:1.2rem;color:#4a5568;line-height:1.7}
+
+/* HOW IT WORKS */
+.dza-hiw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+@media(max-width:720px){.dza-hiw-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.dza-hiw-grid{grid-template-columns:1fr}}
+.dza-hiw-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:28px 20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.05);position:relative}
+.dza-hiw-num{width:36px;height:36px;border-radius:50%;background:var(--dza-blue);color:#fff;font-size:1.1rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.dza-hiw-icon{font-size:2.5rem;margin-bottom:14px;display:block;color:var(--dza-blue)}
+.dza-hiw-title{font-size:1.2rem;font-weight:700;color:#0a1628;margin-bottom:8px}
+.dza-hiw-text{font-size:1.2rem;color:#4a5568;line-height:1.7}
+.dza-hiw-arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--dza-blue);opacity:0.3;font-size:1.2rem;z-index:1}
+@media(max-width:720px){.dza-hiw-arrow{display:none}}
+
+/* TIMELINE */
+.dza-timeline{position:relative;padding-left:32px}
+.dza-timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--dza-blue),rgba(0,96,223,0.1))}
+.dza-tl-item{position:relative;margin-bottom:36px}
+.dza-tl-item:last-child{margin-bottom:0}
+.dza-tl-dot{position:absolute;left:-29px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--dza-blue);border:3px solid #f4f6fb;box-shadow:0 0 0 2px var(--dza-blue)}
+.dza-tl-year{font-size:1.3rem;letter-spacing:2px;text-transform:uppercase;color:var(--dza-blue);font-weight:700;margin-bottom:6px}
+.dza-tl-title{font-size:1.3rem;font-weight:700;color:#0a1628;margin-bottom:6px}
+.dza-tl-text{font-size:1.3rem;color:#4a5568;line-height:1.7}
+
+/* WHY ZAMBOANGA */
+.dza-why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.dza-why-grid{grid-template-columns:1fr}}
+.dza-why-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:24px 28px;box-shadow:0 2px 12px rgba(0,0,0,0.05);display:flex;gap:16px;align-items:flex-start}
+.dza-why-icon{width:40px;height:40px;border-radius:10px;background:rgba(0,96,223,0.08);border:1px solid rgba(0,96,223,0.18);color:var(--dza-blue);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.dza-why-title{font-size:1.2rem;font-weight:700;color:#0a1628;margin-bottom:5px}
+.dza-why-text{font-size:1.2rem;color:#4a5568;line-height:1.7}
+
+/* RECOGNITION */
+.dza-recog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:720px){.dza-recog-grid{grid-template-columns:1fr}}
+.dza-recog-card{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:28px 24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.dza-recog-icon{font-size:3rem;color:var(--dza-gold);margin-bottom:14px;display:block}
+.dza-recog-title{font-size:1.25rem;font-weight:700;color:#0a1628;margin-bottom:6px}
+.dza-recog-text{font-size:1.15rem;color:#4a5568;line-height:1.7}
+
+/* TEAM */
+.dza-team-wrap{background:#0a1628;padding:64px 24px}
+.dza-team-inner{max-width:1020px;margin:0 auto}
+.dza-team-heading{text-align:center;margin-bottom:48px}
+.dza-team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:600px;margin:0 auto}
+@media(max-width:560px){.dza-team-grid{grid-template-columns:1fr}}
+.dza-team-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;transition:transform 0.2s,border-color 0.2s}
+.dza-team-card:hover{transform:translateY(-4px);border-color:rgba(0,96,223,0.4)}
+.dza-team-card::before{content:'';display:block;height:3px;background:linear-gradient(90deg,var(--dza-blue),var(--dza-teal))}
+.dza-team-avatar{width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0d1829,#111f35);position:relative;overflow:hidden}
+.dza-team-avatar img{width:100%;height:100%;object-fit:cover}
+.dza-team-avatar-placeholder{width:80px;height:80px;border-radius:50%;background:rgba(0,96,223,0.15);border:2px solid rgba(0,96,223,0.3);display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--dza-blue)}
+.dza-team-initials{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:800;color:#fff}
+.dza-team-body{padding:24px}
+.dza-team-nickname{font-size:1rem;letter-spacing:2px;text-transform:uppercase;color:var(--dza-teal);font-weight:700;margin-bottom:4px}
+.dza-team-name{font-size:1.4rem;font-weight:800;color:#ffffff;margin-bottom:4px}
+.dza-team-role{font-size:1.2rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-weight:500}
+.dza-team-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.dza-team-tag{font-size:1.1rem;padding:3px 10px;border-radius:20px;background:rgba(0,96,223,0.12);color:var(--dza-blue);border:1px solid rgba(0,96,223,0.2);font-weight:600;letter-spacing:0.5px}
+.dza-team-desc{font-size:1.1rem;color:rgba(255,255,255,0.55);line-height:1.7}
+.dza-team-note{text-align:center;margin-top:36px;font-size:1.15rem;color:rgba(255,255,255,0.35);font-style:italic}
+
+/* FAQ */
+.dza-faq-list{display:flex;flex-direction:column;gap:12px}
+.dza-faq-item{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.dza-faq-q{padding:20px 24px;font-size:1.2rem;font-weight:700;color:#0a1628;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;user-select:none}
+.dza-faq-q:hover{color:var(--dza-blue)}
+.dza-faq-q i{color:var(--dza-blue);font-size:0.85rem;flex-shrink:0;transition:transform 0.2s}
+.dza-faq-q.open i{transform:rotate(180deg)}
+.dza-faq-a{padding:0 24px 20px;font-size:1.15rem;color:#4a5568;line-height:1.8;display:none}
+.dza-faq-a.open{display:block}
+
+/* PARTNER */
+.dza-partner{background:#0a1628;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);padding:52px 24px}
+.dza-partner-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:640px){.dza-partner-inner{grid-template-columns:1fr;text-align:center}}
+.dza-partner-text p{font-size:1.4rem;color:rgba(255,255,255,0.68);line-height:1.85;margin-top:14px}
+.dza-partner-card{background:#111f35;border:1px solid rgba(0,96,223,0.25);border-radius:16px;padding:32px;text-align:center}
+.dza-partner-card-logo{margin-bottom:14px}
+.dza-partner-card h3{font-size:1.3rem;font-weight:800;color:#ffffff;margin-bottom:6px}
+.dza-partner-card p{font-size:1.2rem;color:var(--dza-muted);line-height:1.7;margin-bottom:20px}
+.dza-partner-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#0060df,#0047ab);border:none;border-radius:9px;padding:12px 24px;color:#fff !important;font-size:1.2rem;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none;transition:opacity 0.2s,transform 0.15s}
+.dza-partner-btn:hover{opacity:90%;transform:translateY(-1px)}
+
+/* CTA */
+.dza-cta{background:#0a1628;padding:72px 24px;text-align:center}
+.dza-cta h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#ffffff;letter-spacing:-0.5px;margin-bottom:14px}
+.dza-cta h2 span{color:var(--dza-blue)}
+.dza-cta p{font-size:1.3rem;color:var(--dza-muted);line-height:1.75;max-width:480px;margin:0 auto 32px}
+.dza-cta-btns{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.dza-btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#e8215a,#b81545);border:none;border-radius:10px;padding:14px 30px;color:#fff;font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(232,33,90,0.3)}
+.dza-btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+.dza-btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;padding:14px 30px;color:#ffffff;font-size:1rem;font-weight:700;font-family:inherit;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.dza-btn-outline:hover{border-color:var(--dza-blue);color:var(--dza-blue)}
+</style>
+
+<div class="dza-wrap">
+
+<!-- HERO -->
+<div class="dza-hero">
+  <div class="dza-hero-brand">
+    <img src="https://discoverzambo.wpenginepowered.com/wp-content/uploads/2026/04/imgf.png" alt="Discover Zamboanga" onerror="this.style.display='none'">
+    <span><em>Discover</em>Zamboanga</span>
+  </div>
+  <div class="dza-eyebrow"><i class="fas fa-info-circle"></i> &nbsp;About Us</div>
+  <h1>Zamboanga's <span>Trusted</span><br>Business Directory</h1>
+  <p class="dza-hero-sub">We are dedicated to connecting Zamboanga City's vibrant community with the local businesses, services, and establishments that make this city thrive.</p>
+  <div class="dza-rule"><span class="l"></span><span class="d"></span><span class="l"></span></div>
+</div>
+
+<!-- STATS -->
+<div class="dza-stats">
+  <div class="dza-stats-inner">
+    <div class="dza-stat"><div class="dza-stat-num">500<span>+</span></div><div class="dza-stat-label">Business Listings</div></div>
+    <div class="dza-stat"><div class="dza-stat-num">20<span>+</span></div><div class="dza-stat-label">Categories</div></div>
+    <div class="dza-stat"><div class="dza-stat-num">10K<span>+</span></div><div class="dza-stat-label">Monthly Visitors</div></div>
+    <div class="dza-stat"><div class="dza-stat-num">100<span>%</span></div><div class="dza-stat-label">Free to List</div></div>
+  </div>
+</div>
+
+<!-- OUR STORY -->
+<div class="dza-section">
+  <div class="dza-story-grid">
+    <div>
+      <div class="dza-label">Our Story</div>
+      <h2 class="dza-sh">Built for <span>Zamboanga</span>, by People Who Care</h2>
+      <p class="dza-body-text">DiscoverZamboanga was born out of a simple observation: Zamboanga City is home to thousands of hardworking local businesses, yet many of them struggle to be found online. Customers couldn't find them, and business owners had no easy, affordable way to establish a digital presence.</p>
+      <p class="dza-body-text">That gap is what we set out to close. We created a dedicated platform — built specifically for Zamboanga — where every local business, from a small neighborhood sari-sari store to a well-established restaurant, can be discovered by anyone searching for services in the city.</p>
+      <p class="dza-body-text">Today, DiscoverZamboanga stands as the city's most focused and community-driven business directory, committed to making local commerce more visible, accessible, and connected.</p>
+    </div>
+    <div class="dza-story-img">
+      <div class="dza-story-img-inner">
+        <i class="fas fa-city dza-story-icon"></i>
+        <div class="dza-story-badge">
+          <p>"Our goal is simple — if you're looking for a business in Zamboanga, this is where you find it. And if you own a business here, this is where you belong."</p>
+          <cite>— The DiscoverZamboanga Team</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- WHY ZAMBOANGA -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">Why Zamboanga</div>
+    <h2 class="dza-sh">A City Worth <span>Discovering</span></h2>
+    <p style="font-size:1.3rem;color:#4a5568;max-width:560px;margin:0 auto;line-height:1.8">Zamboanga City is one of the Philippines' most unique and culturally rich cities. Here's why we chose to build this platform here.</p>
+  </div>
+  <div class="dza-why-grid">
+    <div class="dza-why-card">
+      <div class="dza-why-icon"><i class="fas fa-landmark"></i></div>
+      <div><div class="dza-why-title">Rich Cultural Heritage</div><p class="dza-why-text">Known as "Asia's Latin City," Zamboanga boasts a unique blend of Filipino, Spanish, and indigenous cultures — a city unlike any other in the country.</p></div>
+    </div>
+    <div class="dza-why-card">
+      <div class="dza-why-icon"><i class="fas fa-chart-line"></i></div>
+      <div><div class="dza-why-title">Growing Local Economy</div><p class="dza-why-text">Zamboanga City is a major commercial and industrial hub in Mindanao, with a rapidly growing number of local businesses and entrepreneurs.</p></div>
+    </div>
+    <div class="dza-why-card">
+      <div class="dza-why-icon"><i class="fas fa-users"></i></div>
+      <div><div class="dza-why-title">Strong Community Spirit</div><p class="dza-why-text">Zamboangueños are known for their resilience, warmth, and bayanihan spirit — qualities that make supporting local businesses a natural part of daily life.</p></div>
+    </div>
+    <div class="dza-why-card">
+      <div class="dza-why-icon"><i class="fas fa-wifi"></i></div>
+      <div><div class="dza-why-title">Underserved Digital Market</div><p class="dza-why-text">Despite its size and economic activity, Zamboanga lacked a dedicated local business directory — a gap that DiscoverZamboanga was built to fill.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- MISSION & VISION -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">Mission &amp; Vision</div>
+    <h2 class="dza-sh">What Drives <span>Everything</span> We Do</h2>
+  </div>
+  <div class="dza-mv-grid">
+    <div class="dza-mv-card mission">
+      <div class="dza-mv-icon"><i class="fas fa-bullseye"></i></div>
+      <div class="dza-mv-title">Our Mission</div>
+      <p class="dza-mv-text">To empower local businesses in Zamboanga City by providing them with a free, reliable, and professional digital platform — making it easier for residents and visitors alike to discover, connect with, and support the local economy.</p>
+    </div>
+    <div class="dza-mv-card vision">
+      <div class="dza-mv-icon"><i class="fas fa-eye"></i></div>
+      <div class="dza-mv-title">Our Vision</div>
+      <p class="dza-mv-text">To become the most trusted and comprehensive business directory in Zamboanga City — a go-to resource for locals, tourists, and investors who want to explore, engage with, and contribute to the growth of the Zamboanga business community.</p>
+    </div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- CORE VALUES -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">Core Values</div>
+    <h2 class="dza-sh">The Principles We <span>Stand By</span></h2>
+  </div>
+  <div class="dza-values-grid">
+    <div class="dza-val-card"><span class="dza-val-icon">🤝</span><div class="dza-val-title">Community First</div><p class="dza-val-text">Every decision we make puts the Zamboanga community at the center. We exist to serve local businesses and the people who support them.</p></div>
+    <div class="dza-val-card"><span class="dza-val-icon">✅</span><div class="dza-val-title">Integrity &amp; Trust</div><p class="dza-val-text">We manually review every listing to ensure accuracy and legitimacy. Our directory is only as valuable as the trust our users place in it.</p></div>
+    <div class="dza-val-card"><span class="dza-val-icon">🔓</span><div class="dza-val-title">Accessibility</div><p class="dza-val-text">We believe every business deserves a digital presence, regardless of size or budget. That is why our core listing service is completely free.</p></div>
+    <div class="dza-val-card"><span class="dza-val-icon">🔒</span><div class="dza-val-title">Privacy &amp; Security</div><p class="dza-val-text">We handle user data responsibly and with full transparency. Your information is never sold, and our platform is built with security in mind.</p></div>
+    <div class="dza-val-card"><span class="dza-val-icon">📈</span><div class="dza-val-title">Continuous Growth</div><p class="dza-val-text">We are constantly improving our platform — adding features, expanding categories, and refining the experience based on the needs of our users.</p></div>
+    <div class="dza-val-card"><span class="dza-val-icon">🌏</span><div class="dza-val-title">Local Pride</div><p class="dza-val-text">We are proud of Zamboanga City and its rich culture. Our platform is a celebration of everything this city has to offer — its people, its businesses, its spirit.</p></div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- HOW IT WORKS -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">How It Works</div>
+    <h2 class="dza-sh">Getting Listed is <span>Simple</span></h2>
+    <p style="font-size:1.3rem;color:#4a5568;max-width:500px;margin:0 auto;line-height:1.8">Four easy steps to get your business in front of thousands of Zamboanga locals.</p>
+  </div>
+  <div class="dza-hiw-grid">
+    <div class="dza-hiw-card">
+      <div class="dza-hiw-num">1</div>
+      <i class="fas fa-user-plus dza-hiw-icon"></i>
+      <div class="dza-hiw-title">Create an Account</div>
+      <p class="dza-hiw-text">Sign up for a free account using your email. No credit card required — ever.</p>
+      <span class="dza-hiw-arrow"><i class="fas fa-chevron-right"></i></span>
+    </div>
+    <div class="dza-hiw-card">
+      <div class="dza-hiw-num">2</div>
+      <i class="fas fa-store dza-hiw-icon"></i>
+      <div class="dza-hiw-title">Submit Your Listing</div>
+      <p class="dza-hiw-text">Fill in your business details — business requirements, documents, and information.</p>
+      <span class="dza-hiw-arrow"><i class="fas fa-chevron-right"></i></span>
+    </div>
+    <div class="dza-hiw-card">
+      <div class="dza-hiw-num">3</div>
+      <i class="fas fa-shield-alt dza-hiw-icon"></i>
+      <div class="dza-hiw-title">We Review It</div>
+      <p class="dza-hiw-text">Our team reviews your submission to ensure accuracy and quality before publishing.</p>
+      <span class="dza-hiw-arrow"><i class="fas fa-chevron-right"></i></span>
+    </div>
+    <div class="dza-hiw-card">
+      <div class="dza-hiw-num">4</div>
+      <i class="fas fa-globe dza-hiw-icon"></i>
+      <div class="dza-hiw-title">Go Live!</div>
+      <p class="dza-hiw-text">Your business is now live and discoverable by thousands of monthly visitors.</p>
+    </div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- WHAT WE DO -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">What We Do</div>
+    <h2 class="dza-sh">A Platform Built to <span>Connect</span></h2>
+  </div>
+  <div class="dza-features-grid">
+    <div class="dza-feat"><div class="dza-feat-icon"><i class="fas fa-store"></i></div><div><div class="dza-feat-title">Free Business Listings</div><p class="dza-feat-text">Any legitimate business in Zamboanga City can list for free — no subscriptions, no hidden charges. We believe visibility should not come with a price tag.</p></div></div>
+    <div class="dza-feat"><div class="dza-feat-icon"><i class="fas fa-search"></i></div><div><div class="dza-feat-title">Powerful Search &amp; Discovery</div><p class="dza-feat-text">Users can browse by category, location, or keyword — making it simple to find exactly the business or service they need in Zamboanga City.</p></div></div>
+    <div class="dza-feat"><div class="dza-feat-icon"><i class="fas fa-shield-alt"></i></div><div><div class="dza-feat-title">Verified &amp; Moderated Directory</div><p class="dza-feat-text">Every listing is manually reviewed by our team before going live. This keeps our directory spam-free and ensures quality for every user.</p></div></div>
+    <div class="dza-feat"><div class="dza-feat-icon"><i class="fas fa-star"></i></div><div><div class="dza-feat-title">Reviews &amp; Ratings</div><p class="dza-feat-text">Customers can leave honest reviews and ratings, helping businesses build their reputation and helping other users make informed decisions.</p></div></div>
+    <div class="dza-feat"><div class="dza-feat-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="dza-feat-title">Location-Based Listings</div><p class="dza-feat-text">Businesses are mapped and organized by location within Zamboanga City, making it easy for users to find nearby services wherever they are.</p></div></div>
+    <div class="dza-feat"><div class="dza-feat-icon"><i class="fas fa-headset"></i></div><div><div class="dza-feat-title">Dedicated Support</div><p class="dza-feat-text">Our team is available to assist business owners with their listings, answer questions, and ensure every business gets the most out of our platform.</p></div></div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- TIMELINE -->
+<div class="dza-section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+    <div>
+      <div class="dza-label">Our Journey</div>
+      <h2 class="dza-sh">How We Got <span>Here</span></h2>
+      <p class="dza-body-text">DiscoverZamboanga didn't happen overnight. It was built through hard work, iteration, and a genuine desire to make something meaningful for the city.</p>
+    </div>
+    <div class="dza-timeline">
+      <div class="dza-tl-item">
+        <div class="dza-tl-dot"></div>
+        <div class="dza-tl-year">Early 2026 — Concept</div>
+        <div class="dza-tl-title">The Idea is Born</div>
+        <p class="dza-tl-text">RightJobSolutions identifies the lack of a dedicated local business directory for Zamboanga City and begins planning the platform.</p>
+      </div>
+      <div class="dza-tl-item">
+        <div class="dza-tl-dot"></div>
+        <div class="dza-tl-year">Mid 2026 — Development</div>
+        <div class="dza-tl-title">Building Begins</div>
+        <p class="dza-tl-text">The development team — led by interns Incent and Jerico — begins building the platform from the ground up, handling everything from backend systems to frontend design and data population.</p>
+      </div>
+      <div class="dza-tl-item">
+        <div class="dza-tl-dot"></div>
+        <div class="dza-tl-year">Late 2026 — Launch</div>
+        <div class="dza-tl-title">DiscoverZamboanga Goes Live</div>
+        <p class="dza-tl-text">The platform officially launches, welcoming its first wave of business listings and visitors from across Zamboanga City.</p>
+      </div>
+      <div class="dza-tl-item">
+        <div class="dza-tl-dot"></div>
+        <div class="dza-tl-year">2026 — Growth</div>
+        <div class="dza-tl-title">Expanding the Directory</div>
+        <p class="dza-tl-text">The platform continues to grow — more listings, more categories, and a steadily increasing user base of locals and visitors discovering Zamboanga businesses every day.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- RECOGNITION -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">Recognition</div>
+    <h2 class="dza-sh">Milestones We're <span>Proud Of</span></h2>
+  </div>
+  <div class="dza-recog-grid">
+    <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-trophy"></i></span><div class="dza-recog-title">Zamboanga's First Dedicated Directory</div><p class="dza-recog-text">We pioneered the concept of a dedicated local business directory built exclusively for Zamboanga City — the first of its kind in the region.</p></div>
+    <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-users"></i></span><div class="dza-recog-title">Growing Community of Listings</div><p class="dza-recog-text">Within a short period, DiscoverZamboanga has onboarded hundreds of local businesses across more than 20 categories and industries.</p></div>
+    <div class="dza-recog-card"><span class="dza-recog-icon"><i class="fas fa-globe-asia"></i></span><div class="dza-recog-title">Increasing Online Visibility</div><p class="dza-recog-text">Our platform has helped dozens of Zamboanga businesses achieve their first meaningful online presence, connecting them with thousands of monthly visitors.</p></div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="dza-team-wrap">
+  <div class="dza-team-inner">
+    <div class="dza-team-heading">
+      <div class="dza-label" style="justify-content:center;color:#dd3162">
+        <span style="background:#dd3162;width:20px;height:2px;border-radius:1px;display:block"></span>
+        The Team
+      </div>
+      <h2 style="font-size:clamp(1.6rem,4vw,3rem);font-weight:800;color:#ffffff;letter-spacing:-0.5px;line-height:1.15;margin-bottom:14px">The People Who <span style="color:var(--dza-blue)">Built This</span></h2>
+      <p style="font-size:1.3rem;color:rgba(255,255,255,0.45);max-width:480px;margin:0 auto;line-height:1.8">DiscoverZamboanga was built by a small but dedicated team of interns under RightJobSolutions — proving that great things can be built by people who care.</p>
+    </div>
+    <div class="dza-team-grid">
+
+      <!-- Jerico -->
+      <div class="dza-team-card">
+        <div class="dza-team-avatar">
+          <div class="dza-team-initials" style="background:linear-gradient(135deg,#0060df,#003fa3)">JZ</div>
+        </div>
+        <div class="dza-team-body">
+          <div class="dza-team-nickname">"Zyke"</div>
+          <div class="dza-team-name">Jerico</div>
+          <div class="dza-team-role">Frontend Developer &amp; Data Input</div>
+          <div class="dza-team-tags">
+            <span class="dza-team-tag">Frontend</span>
+            <span class="dza-team-tag">Data Input</span>
+            <span class="dza-team-tag">UI</span>
+          </div>
+          <p class="dza-team-desc">Handled the frontend development and user interface of the platform, while also managing data input to ensure all listings were accurate and complete from day one.</p>
+        </div>
+      </div>
+
+      <!-- Incent -->
+      <div class="dza-team-card">
+        <div class="dza-team-avatar">
+          <div class="dza-team-initials" style="background:linear-gradient(135deg,#e8215a,#a0102e)">IH</div>
+        </div>
+        <div class="dza-team-body">
+          <div class="dza-team-nickname">"Hikusama"</div>
+          <div class="dza-team-name">Incent</div>
+          <div class="dza-team-role">Backend Developer</div>
+          <div class="dza-team-tags">
+            <span class="dza-team-tag">Backend</span>
+            <span class="dza-team-tag">Database</span>
+            <span class="dza-team-tag">Systems</span>
+          </div>
+          <p class="dza-team-desc">Led all backend development for the platform — building the systems, database architecture, and server-side logic that power DiscoverZamboanga behind the scenes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="dza-section">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="dza-label" style="justify-content:center">FAQ</div>
+    <h2 class="dza-sh">Frequently Asked <span>Questions</span></h2>
+  </div>
+  <div class="dza-faq-list">
+    <div class="dza-faq-item">
+      <div class="dza-faq-q" onclick="dzFaq(this)">Is it really free to list my business? <i class="fas fa-chevron-down"></i></div>
+      <div class="dza-faq-a">Yes — completely free. You can submit one business listing at no cost, with no expiration date and no hidden fees. If you need additional listings, you can contact our support team for a manual review.</div>
+    </div>
+    <div class="dza-faq-item">
+      <div class="dza-faq-q" onclick="dzFaq(this)">How long does it take for my listing to go live? <i class="fas fa-chevron-down"></i></div>
+      <div class="dza-faq-a">Our team manually reviews every submission to ensure quality. Most listings are reviewed and published within 1–3 business days. You'll be notified once your listing is live.</div>
+    </div>
+    <div class="dza-faq-item">
+      <div class="dza-faq-q" onclick="dzFaq(this)">Can I edit my listing after it's published? <i class="fas fa-chevron-down"></i></div>
+      <div class="dza-faq-a">Yes. You can log into your account at any time to update your business information, photos, contact details, and more. Changes may go through a brief review before going live.</div>
+    </div>
+    <div class="dza-faq-item">
+      <div class="dza-faq-q" onclick="dzFaq(this)">What types of businesses can be listed? <i class="fas fa-chevron-down"></i></div>
+      <div class="dza-faq-a">Any legitimate business operating in Zamboanga City can be listed — from restaurants, retail shops, and service providers to professional practices, schools, and community organizations.</div>
+    </div>
+    <div class="dza-faq-item">
+      <div class="dza-faq-q" onclick="dzFaq(this)">Who built and manages DiscoverZamboanga? <i class="fas fa-chevron-down"></i></div>
+      <div class="dza-faq-a">DiscoverZamboanga was built and is fully managed by <a href="https://rightjobsolutions.com/" target="_blank" rel="noopener" style="color:var(--dza-blue);font-weight:700">RightJobSolutions</a> — a digital solutions company dedicated to building platforms that serve local communities. The platform was developed by a team of interns including Jerico (Zyke) and Incent (Hikusama).</div>
+    </div>
+    <div class="dza-faq-item">
+      <div class="dza-faq-q" onclick="dzFaq(this)">How do I contact support? <i class="fas fa-chevron-down"></i></div>
+      <div class="dza-faq-a">You can reach our team through the <a href="/contact" style="color:var(--dza-blue);font-weight:700">Contact page</a>. We typically respond within 24 hours on business days.</div>
+    </div>
+  </div>
+</div>
+
+<div class="dza-divider"></div>
+
+<!-- PARTNER -->
+<div class="dza-partner">
+  <div class="dza-partner-inner">
+    <div class="dza-partner-text">
+      <div class="dza-label">Developed By</div>
+      <h2 class="dza-sh" style="font-size:clamp(1.4rem,3vw,3rem);color:#ffffff">Powered by <span>RightJobSolutions</span></h2>
+      <p>DiscoverZamboanga is a project conceived, developed, and fully managed by <strong style="color:rgba(255,255,255,0.9)">RightJobSolutions</strong> — a digital solutions provider committed to building platforms that create real value for local communities.</p>
+      <p style="margin-top:14px">RightJobSolutions handles all technical development, hosting, content management, and ongoing improvements — ensuring the platform remains reliable, up-to-date, and continuously evolving.</p>
+      <p style="margin-top:14px">Interested in what else RightJobSolutions can build for your business? Visit their website to learn more.</p>
+    </div>
+    <div class="dza-partner-card">
+      <div class="dza-partner-card-logo"><img src="https://discoverzambo.wpenginepowered.com/wp-content/uploads/2026/04/2024-horizontal-logo-01.webp" style="height:3rem;object-fit:contain" alt="RightJobSolutions"></div>
+      <h3>RightJobSolutions</h3>
+      <p>Digital solutions for businesses and communities. From web development to directory platforms — they build it right.</p>
+      <a class="dza-partner-btn" href="https://rightjobsolutions.com/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Visit RightJobSolutions</a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="dza-cta">
+  <h2>Ready to Get Your Business <span>Listed?</span></h2>
+  <p>Join hundreds of Zamboanga businesses already on the directory. It's free, it's fast, and it's built for you.</p>
+  <div class="dza-cta-btns">
+    <a class="dza-btn-primary" href="/submit-listing"><i class="fas fa-plus-circle"></i> Add Your Listing</a>
+    <a class="dza-btn-outline" href="/contact"><i class="fas fa-envelope"></i> Contact Us</a>
+  </div>
+</div>
+
+</div>
+
+<script>
+function dzFaq(el) {
+  var answer = el.nextElementSibling;
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.dza-faq-q').forEach(function(q){
+    q.classList.remove('open');
+    q.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) {
+    el.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+</script>
